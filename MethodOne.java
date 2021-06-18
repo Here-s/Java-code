@@ -1,7 +1,7 @@
 import java.util.*;
 public class MethodOne {
 
-    //每次写的时候 都写在方法里面 在main里面调用  因为功能会封装到类或者方法 不会写在main函数中
+    //每次写的时候 都写在方法里面 在main里面调用  因为功能会封装到类或者方法 不要写在main函数中 因为公司合并的时候会出错
     //Java当中定义方法的时候 写在main函数前面后面都可以
 
     public static void swap(int x,int y){//这里是交换形参值 不会对原来的实参有影响
