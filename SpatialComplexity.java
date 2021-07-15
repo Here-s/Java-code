@@ -1,6 +1,5 @@
 public class SpatialComplexity {
 
-
     //计算递归Fibonacci的空间复杂度 执行的时候 是分为左右两部分执行的 因为是二叉树 执行完左边之后 右边的也可以使用左边的空间
     //所以左边最多申请 n个空间    所以空间复杂度是 On  空间复杂度的高度就是这棵树的高度  对于整个树来说结点就是 2^n-1
     int Fibonacci(int n){
