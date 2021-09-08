@@ -1,5 +1,6 @@
 import java.util.*;
 
+
 class List{
     public int[] elem;//定义的数组   int 也可以改成 一个类的类型
     public int usedSize;//有效的数据个数
