@@ -89,7 +89,6 @@ public class MyOrderTable {
         table.add(10, 21);
         table.display();
 //        System.out.println(table.contains(6));
-        //删除某个元素
         table.delete(5);
         table.display();
     }

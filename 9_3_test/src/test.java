@@ -1,5 +1,7 @@
 import java.util.*;
 
+
+
     class MyValue{
 
         public int val1;

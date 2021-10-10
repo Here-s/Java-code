@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 class List{
     public int[] elem;//定义的数组   int 也可以改成 一个类的类型
     public int usedSize;//有效的数据个数
@@ -34,7 +33,7 @@ class List{
         //负数也不行
 
         //检测是否满了  如果是满的  就扩容二倍  把长度扩为二倍 然后把原来的元素拷贝进来
-        checkPos(pos);//只要pos 位置不合法 diamond就停在这个位置不走了
+        checkPos(pos);//只要pos 位置不合法 就停在这个位置不走了
 
         if(isFull()){
             //扩容
