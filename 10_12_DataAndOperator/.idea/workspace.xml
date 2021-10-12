@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c1d026ce-e5dd-48e6-973d-1b8a76568e3d" name="Changes" comment="" />
+    <list default="true" id="8b72d14b-b3ce-4836-b4e4-d7f3f741f6bb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DataAndOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DataAndOperator/src/DataAndOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blog/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-10-10-new/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test-10-10-new/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1zILvkOOE8Maa9W3RXR33c09HLj" />
+  <component name="ProjectId" id="1zPXVBbc4jle5wd9uMcWYUM9Zfj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,34 +34,43 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="test-10-10-new" />
+    <configuration name="DataAndOperator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DataAndOperator" />
+      <module name="10_12_DataAndOperator" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.DataAndOperator" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c1d026ce-e5dd-48e6-973d-1b8a76568e3d" name="Changes" comment="" />
-      <created>1633830890887</created>
+      <changelist id="8b72d14b-b3ce-4836-b4e4-d7f3f741f6bb" name="Changes" comment="" />
+      <created>1634050719811</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1633830890887</updated>
-      <workItem from="1633830892699" duration="11375000" />
-      <workItem from="1633936594286" duration="2000" />
-      <workItem from="1634030848749" duration="6000" />
+      <updated>1634050719811</updated>
+      <workItem from="1634050721603" duration="72000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
