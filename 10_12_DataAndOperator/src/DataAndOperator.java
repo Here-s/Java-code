@@ -1,4 +1,5 @@
 public class DataAndOperator {
+    
 
     //不需要去记运算符的优先级 只需要根据自己的逻辑去加括号就行了
 
