@@ -1,4 +1,5 @@
 public class Recursion {
+    
 
     public static int func2(int n){
         //1729  1729%10=9+func2(172)  就按照这样就行了 所以就是 n%10+func2(n/10);
