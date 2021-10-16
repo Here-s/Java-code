@@ -4,6 +4,50 @@ public class Main {
     public static void main(String[] args) {
         int a = 10;
         int b = 20;
+        int max = a > b ? a : b;
+        System.out.println(max);
+    }
+
+    public static void main24(String[] args) {
+        int a = 10;
+        a = a >> 1;
+        System.out.println(a);
+    }
+
+    public static void main23(String[] args) {
+        int a = 10;
+        a = a << 1;
+        System.out.println(a);
+    }
+
+    public static void main22(String[] args) {
+        int a = 10;
+        int b = 20;
+        System.out.println(a | b);
+    }
+
+    public static void main21(String[] args) {
+        int a = 10;//01010
+        int b = 20;//10100
+        System.out.println(a & b);
+    }
+
+    public static void main20(String[] args) {
+        int a = 10;
+        int b = 20;
+        System.out.println(!(a < b));
+    }
+
+    public static void main19(String[] args) {
+        int a = 10;
+        int b = 20;
+        int c = 30;
+        System.out.println(a < b || b < c);
+    }
+
+    public static void main18(String[] args) {
+        int a = 10;
+        int b = 20;
         int c = 30;
         System.out.println(a < b && b < c);
     }
