@@ -2,6 +2,56 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
+        int day = 7;
+        switch (day) {
+            case 1:
+                System.out.println("星期一");
+                break;
+            case 2:
+                System.out.println("星期二");
+                break;
+            case 3:
+                System.out.println("星期三");
+                break;
+            case 4:
+                System.out.println("星期四");
+                break;
+            case 5:
+                System.out.println("星期五");
+                break;
+            case 6:
+                System.out.println("星期六");
+                break;
+            case 7:
+                System.out.println("星期日");
+                break;
+            default:
+                System.out.println("此数字不属于星期");
+                break;
+        }
+    }
+
+    public static void main27(String[] args) {
+        int x = 10;
+        int y = 10;
+        if (x == 20)
+            if (y == 10)
+                System.out.println("aaa");
+            else
+                System.out.println("bbb");
+    }
+
+    public static void main26(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int i = scanner.nextInt();
+        if ((i % 4 == 0 && i % 100 != 0) || (i % 400 == 0)) {
+            System.out.println(i + " 是闰年");
+        } else {
+            System.out.println(i + " 不是闰年");
+        }
+    }
+
+    public static void main25(String[] args) {
         int a = 10;
         int b = 20;
         int max = a > b ? a : b;
@@ -72,19 +122,20 @@ public class Main {
         System.out.println(a);
     }
 
-    public static int search(int[] arr, int a){
-        for(int i = 0; i < arr.length; i++){
-            if(arr[i] == a){
+    public static int search(int[] arr, int a) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == a) {
                 return i + 1;
             }
         }
         return -1;
     }
+
     public static void main15(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int[] arr = new int[n];
-        for(int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = scanner.nextInt();
         }
         int a = scanner.nextInt();
@@ -92,13 +143,14 @@ public class Main {
         System.out.println(ret);
     }
 
-    public static long sum(long n){
+    public static long sum(long n) {
         long sum = 0;
-        for(int i = 1; i <= n; i++){
+        for (int i = 1; i <= n; i++) {
             sum += i;
         }
         return sum;
     }
+
     public static void main14(String[] args) {
         Scanner scanner = new Scanner(System.in);
         long n = scanner.nextInt();
@@ -119,8 +171,8 @@ public class Main {
     public static void main11(String[] args) {
         String str = "Lockey";
         String str1 = "qwer";
-        System.out.println(str+str1);
-        System.out.println(str+123);
+        System.out.println(str + str1);
+        System.out.println(str + 123);
     }
 
     public static void main10(String[] args) {
@@ -173,7 +225,7 @@ public class Main {
 
     public static void main1(String[] args) {
         int num = 10;
-        System.out.println(num) ;
+        System.out.println(num);
         System.out.println(Integer.MAX_VALUE);  // int 的最大值
         System.out.println(Integer.MIN_VALUE);  // int 的最小值
     }
