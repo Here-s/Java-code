@@ -2,6 +2,64 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
+        int num = 1;
+        int sum = 0;
+        do {
+            sum += num;
+            num++;
+        } while (num <= 100);
+        System.out.println(sum);
+    }
+
+    public static void main33(String[] args) {
+        int sum = 0;
+        for (int i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        System.out.println("sum = " + sum);
+    }
+
+    public static void main32(String[] args) {
+        int num = 100;
+        while (num <= 200) {
+            if (num % 3 != 0) {
+                num++; // 这里的 ++ 不要忘记! 否则会死循环.
+                continue;
+            }
+            System.out.println("找到了 3 的倍数, 为:" + num);
+            num++;
+        }
+    }
+
+    public static void main31(String[] args) {
+        int num = 1;
+        while (num <= 10) {
+            if (num % 3 == 0) {
+                System.out.println("找到了 3 的倍数 为:" + num);
+                break;
+            }
+            num++;
+        }
+    }
+
+    public static void main30(String[] args) {
+        int num = 1;
+        while (num <= 10)
+            System.out.println(num);
+        num++;
+    }
+
+    public static void main29(String[] args) {
+        int n = 1;
+        int sum = 0;
+        while (n <= 10){
+            sum += n;
+            n++;
+        }
+        System.out.println(sum);
+    }
+
+    public static void main28(String[] args) {
         int day = 7;
         switch (day) {
             case 1:
