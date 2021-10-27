@@ -1,7 +1,31 @@
 import java.util.*;
 public class Main {
 
+    public static void print(int n){
+        if(n > 9){
+            print(n / 10);
+        }
+        System.out.print(n % 10+" ");
+    }
     public static void main(String[] args) {
+        int n = 1234;
+        print(n);
+    }
+
+    //求一个数的阶乘
+    public static int fact(int n){
+        if(n == 1){
+            return n;
+        }
+        return n*fact(n - 1);
+    }
+    public static void main35(String[] args) {
+        int n = 5;
+        int ret = fact(n);
+        System.out.println(ret);
+    }
+
+    public static void main34(String[] args) {
         int num = 1;
         int sum = 0;
         do {
@@ -287,4 +311,5 @@ public class Main {
         System.out.println(Integer.MAX_VALUE);  // int 的最大值
         System.out.println(Integer.MIN_VALUE);  // int 的最小值
     }
+
 }
