@@ -172,13 +172,56 @@ public class MyLinkList {
         cur.next = del.next;
     }
 
-    //删除所有值为key的节点  遍历链表一遍，删除所有值为 key 的节点
-    public void removeAllKey(int key){
+    //删除所有值为key的节点  遍历链表一遍，删除所有值为 key 的节点(面试难度)
+    public ListNode removeAllKey(int key){
         //定义一个 prev 作为第一个节点 cur 作为第二个节点
+        //然后判断 cur.val 就可以了
         //删的结束条件就是 cur != null
+        //当所有都删完之后，再来判断一次头结点的 val 是否等于 key
+
+        if(this.head == null){
+            return null;
+        }
+        ListNode prev = this.head;
+        ListNode cur = this.head.next;
+        //处理非头节点的 key
+        while (cur != null){
+            if(cur.val == key){
+                prev.next = cur.next;
+                cur = cur.next;
+            } else {
+                prev = cur;
+                cur = cur.next;
+            }
+        }
+        //处理头节点
+        if(this.head.val == key){
+            this.head = this.head.next;
+        }
+        return this.head;
     }
 
     public void clear(){
+        //每个节点都引用着一个节点 在程序运行当中 这些节点慧浪费内存
+        //回收节点最简单的就是让每个节点都不被引用
 
+        //最粗暴的做法就是：直接把 head 置为 null 这样的话 第二个节点就没人引用了
+        //然后一直循环往复 节点就都不被引用 就都被回收了
+
+        //温柔的做法就是：一个一个节点的释放  cur 代表当前需要释放的节点
+        //把 cur.next 置为 null 保险起见 定义一个 curNext 的东西
+        //把 cur 置为 null 然后 cur = curNext 然后 curNext = curNext.next
+        //最后再把头置为 null
+
+        //粗暴的做法 this.next = null
+
+        //温柔的做法
+        while (this.head != null){
+            ListNode curNext = this.head.next;
+            this.head.next = null;
+            this.head = curNext;
+        }
+        //当我们不用对象的时候 一定要解除引用
+        //面试的时候 一个一个释放
     }
 }
