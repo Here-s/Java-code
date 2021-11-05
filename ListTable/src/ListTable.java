@@ -33,7 +33,7 @@ public class ListTable {
         myLinkList.display();
         boolean flg = myLinkList.contains(34);
         System.out.println(flg);
-        System.out.println(myLinkList.size());
+
     }
 
     public static void main1(String[] args) {
