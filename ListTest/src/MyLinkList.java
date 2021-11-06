@@ -10,6 +10,7 @@ class ListNode{
         this.val = val;
     }
 }
+
 public class MyLinkList {
     public ListNode head;//表示链表的头引用  成员变量 属于对象
 
