@@ -27,6 +27,7 @@ public class MyLinkList {
 
     //单向就是只能朝一个方向走  head 是链表的头 就是链表的头引用
 
+    
     public void CreateList() {
         ListNode listNode1 = new ListNode(12);
         ListNode listNode2 = new ListNode(23);
