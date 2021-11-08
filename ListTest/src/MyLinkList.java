@@ -10,6 +10,7 @@ class ListNode{
         this.val = val;
     }
 }
+
 public class MyLinkList {
     public ListNode head;//表示链表的头引用  成员变量 属于对象
 
@@ -26,6 +27,7 @@ public class MyLinkList {
 
     //单向就是只能朝一个方向走  head 是链表的头 就是链表的头引用
 
+    
     public void CreateList() {
         ListNode listNode1 = new ListNode(12);
         ListNode listNode2 = new ListNode(23);
