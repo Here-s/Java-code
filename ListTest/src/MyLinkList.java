@@ -281,24 +281,211 @@ public class MyLinkList {
         return slow;
     }
 
-    //合并两个有序链表，合并之后是升序的。
+    //合并两个升序链表，合并之后是升序的。
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode newHead = new ListNode(-1);
+        ListNode tmp = newHead;
+        while(l1 != null && l2 != null){
+            if(l1.val > l2.val){
+                tmp.next = l2;
+                l2 = l2.next;
+                tmp = tmp.next;
+            } else {
+                tmp.next = l1;
+                l1 = l1.next;
+                tmp = tmp.next;
+            }
+        }
+        if(l1 == null){
+            tmp.next = l2;
+        } else {
+            tmp.next = l1;
+        }
+        return newHead.next;
+    }
 
 
     //编写一段代码 给一个值 把小于 x 的节点排在其余节点之前 不用排序
+    public ListNode partition(ListNode pHead, int x) {
+        if(pHead == null){
+            return null;
+        }
+        ListNode bs = null;
+        ListNode be = null;
+        ListNode as = null;
+        ListNode ae = null;
+        ListNode cur = pHead;
+        while(cur != null){
+            if(cur.val < x){
+                if(bs == null){
+                    bs = cur;
+                    be = cur;
+                } else {
+                    be.next = cur;
+                    be = be.next;
+                }
+            } else {
+                if(as == null){
+                    as = cur;
+                    ae = cur;
+                } else {
+                    ae.next = cur;
+                    ae = ae.next;
+                }
+            }
+            cur = cur.next;
+        }
+        if(bs == null){
+            return as;
+        }
+        be.next = as;
+        if(as != null){
+            ae.next = null;
+        }
+        return bs;
+    }
+
+    //删除链表中重复的结点 给一个升序的链表 删除重复的节点
+    public ListNode deleteDuplication(ListNode pHead) {
+        ListNode cur = pHead;
+        ListNode newHead = new ListNode(-1);
+        ListNode tmp = newHead;
+        while(cur != null){
+            if(cur.next != null && cur.val == cur.next.val){
+                while (cur.next != null && cur.val == cur.next.val){
+                    cur = cur.next;
+                }
+                cur = cur.next;
+            } else {
+                tmp.next = cur;
+                tmp = tmp.next;
+                cur = cur.next;
+            }
+        }
+        tmp.next = null;
+        return newHead.next;
+    }
 
 
+    //判断链表是否是回文结构  （字节原题）   12 23 34 23 12 就是回文结构
+    //要求空间复杂度是 O(1)  时间复杂度是 O(N)    中间截断 反转后半段 双指针
+    //所以就是 先反转 然后逆置 再判断回文
+    // 奇数：head ！= slow  判断值一样再往后走
+    // 偶数 head.next == slow
+    public boolean chkPalindrome(ListNode head) {
+        if(head == null){
+            return true;
+        }
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        ListNode cur = slow.next;
+        while(cur != null){
+            ListNode curNext = cur.next;
+            cur.next = slow;
+            slow = cur;
+            cur = curNext;
+        }
+        while (slow != head){
+            if(head.val != slow.val){
+                return false;
+            }
+            if(head.next == slow){
+                return true;
+            }
+            slow = slow.next;
+            head = head.next;
+        }
+        return true;//说明相遇了
+    }
 
 
+    //相交链表: 找到两个链表的第一个公共节点，并返回  让长的先走差值步 然后再一块走
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if(headA == null || headB == null){
+            return null;
+        }
+        ListNode pl = headA;
+        ListNode ps = headB;//假设是最长
+        int lenA = 0;
+        int LenB = 0;
+        while(pl != null){
+            lenA++;
+            pl = pl.next;
+        }
+        pl = headA;
+        while(ps != null){
+            LenB++;
+            ps = ps.next;
+        }
+        ps = headB;
+        int len = lenA - LenB;
+        if(len < 0){
+            pl = headB;
+            ps = headA;
+            len = LenB - lenA;
+        }
+        //pl 永远指向最长的链表  ps 是最短的 求到了差值 len
 
+        //pl 先走 len 步 然后再同时走 直到相遇
+        while (len != 0){
+            pl = pl.next;
+            len--;
+        }
+        while (ps != pl){
+            pl = pl.next;
+            ps = ps.next;
+            if(ps == null){
+                return null;
+            }
+        }
+        return ps;
+    }
 
+    //判断链表是否有环   百分百考
+    public boolean hasCycle(ListNode head) {
+        if(head == null){
+            return false;
+        }
+        ListNode fast = head;
+        ListNode slow = head;
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
 
-
-
-
-
-
-
-
+    //给定一个链表 返回链表环的入口节点
+    public ListNode detectCycle(ListNode head) {
+        if(head == null){
+            return null;
+        }
+        ListNode fast = head;
+        ListNode slow = head;
+        ListNode newhead = head;
+        while(fast!= null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast == slow){
+                break;
+            }
+        }
+        if(fast == null || fast.next == null){
+            return null;
+        }
+        while(slow != newhead){
+            slow = slow.next;
+            newhead = newhead.next;
+        }
+        return slow;
+    }
 
 
 }
