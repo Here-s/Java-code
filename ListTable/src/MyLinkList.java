@@ -39,6 +39,8 @@ public class MyLinkList {
         listNode4.next = listNode5;
         this.head = listNode1;
     }
+
+
     //打印链表的时候 让 head = head.next 然后往后循环 head.next 就是下一个节点
     //然后一直往后循环就好  但是会导致 head 为null
 
