@@ -22,6 +22,13 @@ class Dog extends Animal {
     public void eat() {
         System.out.println(name+"狼吞虎咽");
     }
+
+    public void func(int a) {
+        System.out.println("int");
+    }
+    public void func(int a, int b) {
+        System.out.println("int int");
+    }
 }
 class Bird extends Animal {
     public String wing;
@@ -39,6 +46,29 @@ class Bird extends Animal {
 public class test3 {
 
     public static void main(String[] args) {
+        Dog animal2 = new Dog("heihei",10);
+        //在构造方法中调用重写的方法（一个坑）
+    }
+
+    public static void main4(String[] args) {
+        Animal animal2 = new Bird("Lock",10,"flyyyyy");
+        if(animal2 instanceof Bird){
+            Bird bird = (Bird) animal2;
+            bird.fly();
+        }
+        //Bird bird = animal2;//报错是因为不是所有动物都是鸟，所以报错了
+        //b.fly();
+
+        //向上转型的话 对象应该是 new 的对象类型 对象要匹配
+    }
+
+    public static void main3(String[] args) {
+        Dog dog = new Dog("haha", 10);
+        dog.func(10);//调用一个参数的构造方法
+        //静态绑定：编译的时候就知道调用的是哪个方法 就是静态绑定
+    }
+
+    public static void main2(String[] args) {
         Animal animal = new Dog("haha",10);
         animal.eat();//因为是调用 Animal 类型 所以是调用的是 Animal 的
         //但是如果 Dog 了写了内容之后，就调用 Dog 的 eat 就发生了动态绑定
@@ -58,7 +88,7 @@ public class test3 {
         Animal animal1 = new Bird("Lock",10,"flyyyyy");
         animal1.eat();//因为没有重写 所以调用的还是 Animal 的 eat
         System.out.println(animal1.name);//访问了父类的 name
-
+        //System.out.println(animal1.wine);//报错是因为通过父类引用只能访问父类自己的成员
     }
 
     public static void func(Animal ani) {
