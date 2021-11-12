@@ -8,6 +8,7 @@ import java.util.*;// * 就是通配符 代表这个包地下所有的类
 import com.lockey.test.*;//这里写了 * 之后 还是没有导入 所以同名的包就不会报错
 //包名必须是小写的
 import com.lockey.test.Test;
+
 public class Package {
 
 
