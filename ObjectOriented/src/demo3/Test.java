@@ -1,5 +1,10 @@
 package demo3;
 
+//三个常用接口：
+// Comparable ：
+// Comparator ：
+// Cloneable  ：
+
 //Shape 可以被抽象为一个接口
 //接口
 // 1 interface 就是接口
@@ -18,6 +23,7 @@ package demo3;
 //    接口和接口之间可以使用 extends 来操作他们的关系，此时 这里面的意为：拓展
 //    一个接口 B 通过 extends 来拓展另一个接口 C 的功能，此时当一个类 D 通过 implements 实现
 //    接口 B 的时候，此时重写的方法不仅仅是 B 的抽象方法，还有他从 C 接口，拓展来的功能
+// 13 接口是表示具有某种特性 有了接口之后，类的使用者就不必关注具体类型，只需关注某个类是否具有某种能力
 interface IShape {
     public abstract void draw();//抽象方法
     default public void func() {
