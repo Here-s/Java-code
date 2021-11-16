@@ -15,11 +15,11 @@ public class BorrowOperation implements IOperation{
             if(name.equals(book.getName())){
                 book.setBorrowed(true);
                 System.out.println("借阅成功");
+                System.out.println(book);
                 return;
             }
         }
         System.out.println("没有这本书，无法借阅");
-        return;
     }
 
 }
