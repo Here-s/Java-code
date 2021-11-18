@@ -1,6 +1,5 @@
 public class Test {
 
-
     //反射：通过反射就能获得类的属性  使用反射 要先获取 class 对象
     //然后通过 class 对象 来获取这个方法
     public static void main(String[] args) {
