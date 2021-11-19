@@ -6,7 +6,6 @@ public class StringTest {
         if(s == null || s.length() == 0){
             //通过这样来判断是否空指针
         }
-
         assert s != null;//要使用 assert 要设置 IDEA
     }
     public static void main(String[] args) {
