@@ -1,5 +1,6 @@
 import java.util.*;
 public class ProgramControlTest {
+    
     public static void main(String[] args) {
         //如果找一个十进制的数字的每一位上是几 只需要除10 模10就行了  二进制的话 就是除2 模2   八进制就是除8 模8
 
