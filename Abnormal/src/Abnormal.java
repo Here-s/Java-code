@@ -12,7 +12,22 @@ class Person implements Cloneable{
 }
 public class Abnormal {
 
-    //自定义异常
+    //使用 while 循环简历类似 ”恢复模型“ 的异常处理行为，它将不断重复，知道异常不再抛出
+    public static void main(String[] args) {
+        int i = 0;
+        while (i < 10) {
+            try {
+                if (i < 10) {
+                    throw new RuntimeException("x < 10");
+                }
+            } catch (RuntimeException e){
+                e.printStackTrace();
+                System.out.println("尝试处理异常");
+                i++;
+            }
+        }
+        System.out.println("异常处理结束了");
+    }
 
     //用 throw 抛异常的时候 抛的是自定义的异常
     public static void func4(int x) throws RuntimeException {
