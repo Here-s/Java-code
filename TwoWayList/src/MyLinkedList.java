@@ -19,7 +19,7 @@ public class MyLinkedList {
         }
         System.out.println();
     }
-    //得到单链表的长度
+    //得到链表的长度
     public int size(){
         ListNode cur = this.head;
         int count = 0;
@@ -29,7 +29,7 @@ public class MyLinkedList {
         }
         return count;
     }
-    //查找是否包含关键字key是否在单链表当中
+    //查找是否包含关键字key是否在链表当中
     public boolean contains(int key){
         ListNode cur = this.head;
         while (cur != null){
@@ -137,16 +137,20 @@ public class MyLinkedList {
                     head = head.next;
                     if(head != null) {//这样就不怕只有一个节点了  如果只有一个节点的话 就会空指针异常
                         head.prev = null;
+                        cur = cur.next;
                     } else {
                         last = null;//只有一个节点 所以 last 也置为 null
+                        cur = cur.next;
                     }
                 } else {
                     if(cur == last){
                         cur.prev.next = cur.next;
                         last = last.prev;
+                        cur = cur.next;
                     } else {
                         cur.prev.next = cur.next;
                         cur.next.prev = cur.prev;
+                        cur = cur.next;
                     }
                 }
             } else {
