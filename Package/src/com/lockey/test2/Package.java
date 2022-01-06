@@ -2,10 +2,11 @@ package com.lockey.test2;
 
 //发现狗和鸟 都有 name 和 age 而且都有 eat 方法 有共性
 //所以就可以把这些共性写出来
-//继承：就是对共性的抽取  可以对代码进行重用  Java 当中是单继承
+//继承：就是对共性的抽取  可以对代码进行重用  Java 当中是单继承 就是只能继承一个类
 //不能继承多个类 子类可以访问夫类当中的所有 public 方法
 //父类的 private 方法不能在子类中访问
 //在子类构造的同时 要帮助父类进行构造  所以如果父类有构造方法的话 子类继承就会报错
+//一个类的继承最好不要超过三层  如果不想被继承的话 就设置为 final 修饰
 class Animal{
     public String name;
     public int age;
@@ -23,9 +24,10 @@ class Animal{
 class Dog extends Animal{
     //这里继承之后就有了成员变量
     public Dog(String name, int age){
-        super(name,age);//就是显示调用构造方法  就是父类带有两个参数的构造方法
+        super(name,age);//就是显示调用构造方法  就是调用父类带有两个参数的构造方法
         //因为父类有了带参数的构造方法 所以这里也必须得写出来构造方法
         //super 必须放在第一行
+        //super 可以调用父类的构造方法  也可以调用父类的普通方法  也可以调用父类的属性
     }
 }
 class Bird extends Animal{

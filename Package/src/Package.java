@@ -7,8 +7,11 @@ import java.util.*;// * 就是通配符 代表这个包地下所有的类
 //import static java.lang.Math.*;
 import com.lockey.test.*;//这里写了 * 之后 还是没有导入 所以同名的包就不会报错
 //包名必须是小写的
+
+//import 只能导入具体的类 而不是具体的包
 import com.lockey.test.Test;
 
+//包名必须是小写的
 public class Package {
 
 
@@ -22,7 +25,7 @@ public class Package {
     //如果一个类不想被继承 我们可以设置为 final 修饰 这样就不用担心类被继承了
     //final 也可以修饰方法 代表方法
 
-    //面向对象的三大特征：封装 继承
+    //面向对象的三大特征：封装 继承 多态
     //继承   所有的父类 都默认是 Object    在继承的时候 继承的链条会越来越长
     //有一个规则：继承层次不要超过三层
 
@@ -33,7 +36,7 @@ public class Package {
     //4. java.sql:进行数据库开发的支持包。
     //5. java.util:是java提供的工具程序包。(集合类等) 非常重要
     //6. java.io:I/O编程开发包。
-    public static void main4(String[] args) {
+    public static void main(String[] args) {
         Test test = new Test();
         //System.out.println(test.val);//报错是因为 test 是默认的包访问权限
     }
