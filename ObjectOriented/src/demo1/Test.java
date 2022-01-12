@@ -36,14 +36,10 @@ public class Test {
         Rect rect = new Rect();
         Flower flower = new Flower();
         Triangle triangle = new Triangle();
-
-        //因为这个引用引用的对象 都是可以通过 Shape 来引用的 所以下面就是通过多态来输出
-        //扩展能力非常强
         Shape[] shapes = {triangle,rect,triangle,rect,flower,new Cycle()};
         for (Shape s: shapes) {
             s.draw();
         }
-
     }
 
     public static void main4(String[] args) {
