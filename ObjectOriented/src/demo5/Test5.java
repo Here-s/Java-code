@@ -1,6 +1,5 @@
 package demo5;
 
-
 class Animal {
     protected String name;
 
