@@ -1,70 +1,32 @@
 package demo5;
 
-class Animal {
-    protected String name;
 
-    public Animal(String name) {
-        this.name = name;
+class Person implements Cloneable {
+    public int age;
+    public void eat() {
+        System.out.println("吃！");
     }
-}
-interface IFlying {
-    void fly();
-}
-interface IRunning {
-    void run();
-}
-interface ISwimming {
-    void swim();
-}
-class Cat extends Animal implements IRunning {
-    public Cat(String name) {
-        super(name);
-    }
+
     @Override
-    public void run() {
-        System.out.println(this.name + "正在用四条腿跑");
+    public String toString() {
+        return "Person{" +
+                "age=" + age +
+                '}';
     }
-}
-class Fish extends Animal implements ISwimming {
-    public Fish(String name) {
-        super(name);
-    }
+
     @Override
-    public void swim() {
-        System.out.println(this.name + "正在用尾巴游泳");
-    }
-}
-class Frog extends Animal implements IRunning, ISwimming {
-    public Frog(String name) {
-        super(name);
-    }
-    @Override
-    public void run() {
-        System.out.println(this.name + "正在往前跳");
-    }
-    @Override
-    public void swim() {
-        System.out.println(this.name + "正在蹬腿游泳");
-    }
-}
-class Duck extends Animal implements IRunning, ISwimming, IFlying {
-    public Duck(String name) {
-        super(name);
-    }
-    @Override
-    public void fly() {
-        System.out.println(this.name + "正在用翅膀飞");
-    }
-    @Override
-    public void run() {
-        System.out.println(this.name + "正在用两条腿跑");
-    }
-    @Override
-    public void swim() {
-        System.out.println(this.name + "正在漂在水上");
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
 public class Test5 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
+        Person person = new Person();
+        person.age = 99;
+        Person person1 = (Person)person.clone();
+        System.out.println(person1);
+        person1.age = 199;
+        System.out.println(person);
+        System.out.println(person1);
     }
 }
