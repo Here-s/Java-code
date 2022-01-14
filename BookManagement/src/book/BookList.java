@@ -21,6 +21,11 @@ public class BookList {
         return this.books[pos];
     }
 
+    /**
+     * 设置 pos 下标为一本书（添加一本书）
+     * @param pos
+     * @param book
+     */
     public void setBook(int pos, Book book) {
         this.books[pos] = book;
     }
