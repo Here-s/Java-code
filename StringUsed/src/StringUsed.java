@@ -3,14 +3,13 @@ import java.util.Arrays;
 
 public class StringUsed {
 
-
     //字符串拼接   字符串的 length 是带 () 的  字符串的长度是有效字符的长度
     //Java 的数组 里面机制很多
     public static void main(String[] args) {
         String str = "abcd";
         //拼接后的字符不入池
         String ret = str.concat("ef");
-        System.out.println(ret);
+//        System.out.println(ret);
         System.out.println(str.isEmpty());//判断字符串是不是空的
     }
 
@@ -19,7 +18,7 @@ public class StringUsed {
         String str = "abcdefBFEG";
         //把字符全部转化为大写
         String ret = str.toUpperCase();
-        System.out.println(ret);
+//        System.out.println(ret);
         //把字符转化为小写
         String tmp = str.toLowerCase();
         System.out.println(tmp);
@@ -41,6 +40,8 @@ public class StringUsed {
         //如果给的是 0 默认返回原来的 不会产生新对象
         //如果再加一个参数 n 的话 就是截取范围 左闭右开
         System.out.println(tmp);
+        String tmp1 = str.substring(2,5);
+        System.out.println(tmp1);
     }
 
     public static void main12(String[] args) {
@@ -115,7 +116,7 @@ public class StringUsed {
     public static void main6(String[] args) {
         String str1 = "abc";
         String str2 = "Abc";
-        System.out.println(str1.equalsIgnoreCase(str2));//equalsIgnoreCase 忽略大小写的情况
+//        System.out.println(str1.equalsIgnoreCase(str2));//equalsIgnoreCase 忽略大小写的情况
         //比较字符串大小
         int n = str1.compareTo(str2);//这里的比较有三种情况：大于0 小于0 等于0
         System.out.println(n);
@@ -166,7 +167,7 @@ public class StringUsed {
         return true;
     }
     public static void main2(String[] args) {
-        String str = "1234567";
+        String str = "1234567890";
         System.out.println(isNumberChar(str));
     }
 
@@ -184,7 +185,7 @@ public class StringUsed {
         String str2 = "hello";
         //取字符串的某一个位置字符
         char ch = str2.charAt(2);//获取某个下标位置的字符
-
+        System.out.println(ch);
         //把整个字符串变成数组
         char[] ch1 = str2.toCharArray();
         System.out.println(Arrays.toString(ch1));

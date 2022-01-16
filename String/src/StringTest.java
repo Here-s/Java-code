@@ -15,7 +15,7 @@ public class StringTest {
         func2(str1);
     }
 
-    public static void main11(String[] args) {
+    public static void main15(String[] args) {
         //数组的整体赋值，只有一次机会，就是创建数组的时候
         int[] arr = {1,2,3,4,5};
         int[] arr2 = new int[]{3,4,5,6};
@@ -23,7 +23,7 @@ public class StringTest {
         //就比如第二行写成 arr = new int[]{3,4,5,6}; 就会报错
     }
 
-    public static void main10(String[] args) {
+    public static void main14(String[] args) {
         String str1 = null;
         String str2 = "11";//可以把 11 改成 22 但是要通过反射才能修改
         System.out.println(str1.equals(str2));
@@ -33,7 +33,7 @@ public class StringTest {
         System.out.println("hello".equals(str2));
     }
 
-    public static void main9(String[] args) {
+    public static void main13(String[] args) {
         String str1 = "11";
         String str2 = new String("1")+new String("1");
         str2.intern();//当哈希常量池当中没有这个值的时候，才会手动入池，如果有了 就不会入池
@@ -42,7 +42,7 @@ public class StringTest {
         //因为 str1 str2 都是引用 所以也会有空指针异常
     }
 
-    public static void main8(String[] args) {
+    public static void main12(String[] args) {
         String str1 = new String("1")+new String("1");
         str1.intern();
         String str2 = "11";
@@ -51,7 +51,7 @@ public class StringTest {
 
     }
 
-    public static void main7(String[] args) {
+    public static void main11(String[] args) {
         String str1 = "11";
         String str2 = new String("1")+new String("1");
         System.out.println(str1 == str2);//false 因为str2 new 1 的时候 StringTable 里面
@@ -61,7 +61,7 @@ public class StringTest {
         // str2 并没有进入 StringTable 池
     }
 
-    public static void main6(String[] args) {
+    public static void main10(String[] args) {
         String str1 = "hello";
         String str2 = "he"+"llo";
         System.out.println(str1 == str2);
@@ -71,6 +71,31 @@ public class StringTest {
         String str3 = "he";
         String str4 = str3+"llo";//str3 是一个变量，编译的时候，不知道是啥 所以结果是 false
         System.out.println(str3 == str4);
+    }
+
+    public static void main9(String[] args) {
+        String str1 = "hel";
+        String str2 = str1+"lllllll";
+        System.out.println(str2);
+    }
+
+    public static void main8(String[] args) {
+        String str = "hello" ;
+        str = str + " world" ;
+        str += "!!!" ;
+        System.out.println(str);
+    }
+
+    public static void main7(String[] args) {
+        String str1 = new String("hello").intern() ;
+        String str2 = "hello" ;
+        System.out.println(str1 == str2);
+    }
+
+    public static void main6(String[] args) {
+        String str1 = new String("Hello");
+        String str2 = new String("Hello");
+        System.out.println(str1.equals(str2));
     }
 
     public static void main5(String[] args) {
@@ -129,14 +154,14 @@ public class StringTest {
     }
 
     public static void main2(String[] args) {
-        String str = "abcdef";
-        String str2 = str;
-        System.out.println(str);
+        String str1 = "abcdef";
+        String str2 = str1;
+        System.out.println(str1);
         System.out.println(str2);
         //str1 和 str2 都指向 abcdef   是否可以通过 str1 修改 abcdef 为 gbcdef
         //不能修改 因为 abcdef 是一个字面值常量
-        str2 = "Lockey";
-        System.out.println(str);
+        str1 = "Lockey";
+        System.out.println(str1);
         System.out.println(str2);
     }
 
