@@ -18,13 +18,13 @@ public class TestDemo {
         return s;
         //return new StringBuffer(str);
     }
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
 
     }
 
     //StringBuffer 比 StringBuilder 多了一个关键字 synchronized 保证线程的安全
     //在多线程的情况下 用 StringBuffer 会更安全  如果是单线程 就用 StringBuilder
-    public static void main2(String[] args) {
+    public static void main(String[] args) {
         StringBuilder s = new StringBuilder("abcdef");
         //reverse 逆序字符串
         s.reverse();
