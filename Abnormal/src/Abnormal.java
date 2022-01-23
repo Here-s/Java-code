@@ -12,7 +12,7 @@ class Person implements Cloneable{
 }
 public class Abnormal {
 
-    //使用 while 循环简历类似 ”恢复模型“ 的异常处理行为，它将不断重复，知道异常不再抛出
+    //使用 while 循环建立类似 ”恢复模型“ 的异常处理行为，它将不断重复，直到异常不再抛出
     public static void main(String[] args) {
         int i = 0;
         while (i < 10) {
@@ -31,14 +31,14 @@ public class Abnormal {
 
     //用 throw 抛异常的时候 抛的是自定义的异常
     public static void func4(int x) throws RuntimeException {
-        if(x == 0){
+        if(x == 10){
             System.out.println(10 / x);
             throw new RuntimeException("x == 10");
         }
     }
     public static void main12(String[] args) {
         try {
-            func4(0);
+            func4(10);
         } catch (ArithmeticException e) {
             e.printStackTrace();
         }
@@ -118,9 +118,9 @@ public class Abnormal {
         } catch (InputMismatchException e) {
             e.printStackTrace();
             System.out.println("输入有误");
-        } catch (ArithmeticException e){
-            e.printStackTrace();
-            System.out.println("算术异常，可能 0 做了除数");
+//        } catch (ArithmeticException e){
+//            e.printStackTrace();
+//            System.out.println("算术异常，可能 0 做了除数");
         } finally {
             //finally 一般用于资源的关闭
             //不管是否发生异常 finally 都会执行
@@ -210,5 +210,9 @@ public class Abnormal {
     public static void main1(String[] args) {
         int[] arr = {1,2,3};
         System.out.println(arr[9]);//这样就会报异常 运行时就报异常
+    }
+
+    public static void main0(String[] args) {
+        System.out.println(10/0);
     }
 }
