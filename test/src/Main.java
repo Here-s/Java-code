@@ -2,8 +2,101 @@ import java.util.*;
 
 public class Main {
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int V = scanner.nextInt();
+        int num = scanner.nextInt();
+        int[] arr = new int[num];
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = scanner.nextInt();
+            sum += arr[i];
+            if (sum >= V) {
+                System.out.println("0");
+                return;
+            }
+        }
+    }
 
-	public static void main(String[] args) {
+    public static void main9(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sum = scanner.nextInt();
+        int count = scanner.nextInt();
+        int[] arr = new int[count];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        Arrays.sort(arr);
+        int left = 0;
+        int right = arr.length - 1;
+        int count1 = 0;
+        while (left <= right) {
+            if (arr[left] + arr[right] > sum){
+                count1++;
+                right -= 1;
+            } else {
+                count1++;
+                left++;
+                right--;
+            }
+        }
+        System.out.println(count1);
+    }
+
+    public static void main8(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            int key = i;
+            int tmp = 1;
+            while (key / 10 != 0) {
+                tmp++;
+                key /= 10;
+            }
+            int sum = i + (i + 1) + (i + 2);
+            int tmp2 = 1;
+            while (sum / 10 != 0) {
+                tmp2++;
+                sum /= 10;
+            }
+            if(tmp2 <= tmp){
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+
+    public static void main7(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String string = scanner.nextLine();
+        byte[] bytes = string.getBytes();
+        int count = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            if(bytes[i] >= '0' && bytes[i] <= '9'){
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+
+    public static void main6(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String string = scanner.nextLine();
+        String ch = scanner.nextLine();
+        if (string.equals(" ")) {
+            System.out.println(string);
+            return;
+        }
+        String[] string1 = string.split(ch);
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < string1.length; i++) {
+            stringBuilder.append(string1[i]);
+        }
+        System.out.println(stringBuilder);
+    }
+
+	public static void main5(String[] args) {
 		Scanner sc =new Scanner(System.in);
 		int n = sc.nextInt();
 		for (int i = 0; i <n; i++) {
